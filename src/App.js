@@ -33,7 +33,6 @@ class App extends React.Component {
 
             }
           })
-          console.log(this.state)
         })
       }
       // this else statment was a note if anything remove the else statement to get the code to work!!
