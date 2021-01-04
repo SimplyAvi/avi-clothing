@@ -12,7 +12,6 @@ import {auth, createUserProfileDocument } from './firebase/firebase.utils'
 import { setCurrentUser } from './redux/user/user.actions'
 import  {createStructuredSelector} from 'reselect'
 import { selectCurrentUser } from './redux/user/user.selector'
-
 class App extends React.Component {
   unsubscribeFromAuth = null;
   
@@ -31,7 +30,7 @@ class App extends React.Component {
       }
       // this else statment was a note if anything remove the else statement to get the code to work!!
        setCurrentUser(userAuth ) 
-     
+
     }) 
   }
 

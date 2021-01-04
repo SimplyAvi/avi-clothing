@@ -13,6 +13,18 @@ const config = {
     appId: "1:637678998586:web:489ba628eae3ccadf11103"
 }
 
+firebase.initializeApp(config);
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
+
+
+
 export const createUserProfileDocument = async (userAuth, additionalData ) => {
     if (!userAuth) return;
     const userRef = firestore.doc(`users/${userAuth.uid}`)
@@ -36,13 +48,16 @@ export const createUserProfileDocument = async (userAuth, additionalData ) => {
    
 }
 
-firebase.initializeApp(config);
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = firestore.collection(collectionKey)
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
+    const batch = firestore.batch()
+    objectsToAdd.forEach(obj => {
+        const newDocRef = collectionRef.doc()
+        batch.set(newDocRef, obj)
+    })
+    return await batch.commit()
+}
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select_account' });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
