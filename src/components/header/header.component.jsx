@@ -8,7 +8,7 @@ import { selectCurrentUser} from '../../redux/user/user.selector'
 import { selectCartHidden } from '../../redux/cart/cart.selectors'
 import { signOutStart} from '../../redux/user/user.actions'
 
-import { HeaderContainer, LogoContainer, OptionContainer,  OptionLink } from './header.styles'
+import { HeaderContainer, LogoContainer, OptionContainer,  OptionLink, Contact } from './header.styles'
 
 const Header = ({currentUser, hidden, signOutStart }) => (
     <HeaderContainer className='header'>
@@ -17,7 +17,9 @@ const Header = ({currentUser, hidden, signOutStart }) => (
             <Logo className='logo'/>
         </LogoContainer>
         <OptionContainer className='options'>
-            <OptionLink  to='/shop'> SHOP  </OptionLink>
+        <OptionLink to='/shop'> SHOP  </OptionLink>
+        <Contact href="https://www.linkedin.com/in/avitosh-totaram-4b94b2120/">CONTACT</Contact>
+
             {
                 currentUser ?
                     <OptionLink as='div'  onClick={signOutStart}>SIGN OUT</OptionLink>

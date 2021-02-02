@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
@@ -26,6 +26,7 @@ const App = ({ checkUserSession, currentUser }) => {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
+          
           <Route path="/shop" component={ShopPage} />
           <Route  exact path="/checkout" component={CheckoutPage} />
           <Route
