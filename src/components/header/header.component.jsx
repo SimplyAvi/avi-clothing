@@ -18,7 +18,7 @@ const Header = ({currentUser, hidden, signOutStart }) => (
         </LogoContainer>
         <OptionContainer className='options'>
         <OptionLink to='/shop'> SHOP  </OptionLink>
-        <Contact href="https://www.linkedin.com/in/avitosh-totaram-4b94b2120/">CONTACT</Contact>
+        <Contact href="https://www.linkedin.com/in/avitosh-totaram-4b94b2120/">Contact</Contact>
 
             {
                 currentUser ?
