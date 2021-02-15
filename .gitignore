@@ -10,6 +10,7 @@
 # production
 /client/build
 
+
 # misc
 /client/.DS_Store
 /client/.env.local
@@ -17,7 +18,7 @@
 /client/.env.test.local
 /client/.env.production.local
 
-
+/node_modules
 .env
 
 /client/npm-debug.log*

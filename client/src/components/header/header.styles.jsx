@@ -27,12 +27,6 @@ export const OptionContainer = styled.div`
         justify-content: flex-end;
 
 `
-export const Contact = styled.a`
-    padding: 10px 15px;
-    cursor: pointer;
-
-`
-
 
 export const OptionLink = styled(Link)`
     padding: 10px 15px;
