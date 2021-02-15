@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from "react-router-dom"
 import {connect} from 'react-redux'
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import CartIcon from '../cart-icon/cart-icon.component'
@@ -18,7 +19,7 @@ const Header = ({currentUser, hidden, signOutStart }) => (
         </LogoContainer>
         <OptionContainer className='options'>
             <OptionLink  to='/shop'> SHOP  </OptionLink>
-            <OptionLink to='/contact'> CONTACT  </OptionLink>
+            <a  href='https://www.linkedin.com/in/avitosh-totaram-4b94b2120/'> CONTACT  </a>
             {
                 currentUser ?
                     <OptionLink as='div'  onClick={signOutStart}>SIGN OUT</OptionLink>
