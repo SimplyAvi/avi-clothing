@@ -9,7 +9,7 @@ import { selectCurrentUser} from '../../redux/user/user.selector'
 import { selectCartHidden } from '../../redux/cart/cart.selectors'
 import { signOutStart} from '../../redux/user/user.actions'
 
-import { HeaderContainer, LogoContainer, OptionContainer,  OptionLink } from './header.styles'
+import { HeaderContainer, LogoContainer, OptionsContainer,  OptionLink } from './header.styles'
 
 const Header = ({currentUser, hidden, signOutStart }) => (
     <HeaderContainer className='header'>
@@ -17,7 +17,7 @@ const Header = ({currentUser, hidden, signOutStart }) => (
         <LogoContainer  to="/">
             <Logo className='logo'/>
         </LogoContainer>
-        <OptionContainer className='options'>
+        <OptionsContainer className='options'>
             <OptionLink  to='/shop'> SHOP  </OptionLink>
             <a  href='https://www.linkedin.com/in/avitosh-totaram-4b94b2120/'> CONTACT  </a>
             {
@@ -27,7 +27,7 @@ const Header = ({currentUser, hidden, signOutStart }) => (
                     <OptionLink to='/signin'> SIGN IN </OptionLink>
             }
             < CartIcon / >
-        </OptionContainer>
+        </OptionsContainer>
         {hidden ? null : < CartDropdown />}
     </HeaderContainer>
 )
